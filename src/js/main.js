@@ -29,27 +29,18 @@ angular
     function buildDelayedToggler(navID) {
       return debounce(function() {
         $mdSidenav(navID)
-          .toggle()
-          .then(function () {
-            $log.debug("toggle " + navID + " is done");
-          });
+          .toggle();
       }, 200);
     }
     function buildToggler(navID) {
       return function() {
         $mdSidenav(navID)
-          .toggle()
-          .then(function () {
-            $log.debug("toggle " + navID + " is done");
-          });
+          .toggle();
       };
     }
   })
   .controller('RightCtrl', function ($scope, $timeout, $mdSidenav, $log) {
     $scope.close = function () {
-      $mdSidenav('right').close()
-        .then(function () {
-          $log.debug("close RIGHT is done");
-        });
+      $mdSidenav('right').close();
     };
   });
